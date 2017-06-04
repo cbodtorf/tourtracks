@@ -1,0 +1,15 @@
+<div class="">
+  <h1>Tour Tracks</h1>
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  <% if @artists %>
+    <ul>
+      <% @artists.each do |artist| %>
+        <li><%= artist %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
